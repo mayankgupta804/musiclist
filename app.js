@@ -11,6 +11,7 @@ const expressSession = require('express-session')
 
 const indexRouter = require('./routes/index');
 const api = require('./routes/api/index');
+const users = require('./routes/api/users');
 
 const app = express();
 
@@ -35,7 +36,8 @@ app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api', api)
+app.use('/api', api);
+app.use('/api/users', users)
 
 // Configure passport
 const User = require('./models/user');
