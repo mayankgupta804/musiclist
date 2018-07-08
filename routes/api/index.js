@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Musiclist Alpha' });
+    res.json({text: 'Musiclist API Text'})
 });
 
 module.exports = router;
